@@ -1,7 +1,7 @@
 const TimerComponent = () => {
     return (
         <div>
-            A
+            Timer
         </div>
     )
 }

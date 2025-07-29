@@ -1,17 +1,16 @@
 
 import './App.css'
 import Buttons from './components/buttons'
-import Footer from './components/footer'
 import TimerComponent from './components/timer'
+import GlobalStyle from './styles/GlobalStyle'
 
 function App() {
 
   return (
       <div>
-        <h1>Pomodoro App</h1>
+        <GlobalStyle />
         <TimerComponent />
         <Buttons />
-        <Footer />
       </div>
   )
 }
