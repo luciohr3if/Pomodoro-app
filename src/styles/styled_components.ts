@@ -1,5 +1,36 @@
 import styled from 'styled-components'
 
+export const MainDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+
+export const TomatoDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30rem;
+    height: 25rem;
+    border: 0.6rem solid #ba2720ff;
+    border-bottom: none;
+    background-color: rgba(223, 76, 76, 0.1);
+`
+
+export const StyledTimerDiv = styled.div`
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+`
+
 export const StyledBtnsDiv = styled.div`
     background-color: transparent;
     width: 100%;
@@ -7,53 +38,28 @@ export const StyledBtnsDiv = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: auto;
     padding: 0;
     margin: 0;
     gap: 0.6rem;
-
-    @media (max-width: 600px) {
-        flex-direction: column;
-    }
 `
 
-const BaseButton = styled.button`
+export const StyledButton = styled.button`
     color: #ffffff;
-    border-radius: 50%;
+    border-radius: 0.6rem;
     padding: 0.6em 1.2em;
     border: none;
     font-size: 2em;
     outline: none;
     font-weight: 500;
     cursor: pointer;
+    background-color: #014F86;
 
     @media (max-width: 600px) {
         font-size: 1.25rem;
     }
 `
 
-export const PauseButton = styled(BaseButton)`
-    background-color: #c61f2aff;
-
-    &:hover {
-        background-color: #a20a0a;
-    }
-`
-
-export const StartButton = styled(BaseButton)`
-  background-color: #3f751bff;
-
-  &:hover {
-      background-color: #335b18ff;
-    }
-`;
-
-export const ResetButton = styled(BaseButton)`
-  background-color: #1665afff;
-
-  &:hover {
-      background-color: #08559d;
-    }
-`;
 
 export const StyledFooter = styled.div`
     display: flex;
@@ -72,8 +78,8 @@ export const StyledFooter = styled.div`
 `
 
 export const StyledSpan = styled.span`
-  display: flex;
-  align-items: center;
-  gap: 0.469rem;
-  color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.469rem;
+    color: #ffffff;
 `;

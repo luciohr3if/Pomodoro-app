@@ -1,18 +1,18 @@
 import Tooltip from "@mui/material/Tooltip"
-import { PauseButton, ResetButton, StartButton, StyledBtnsDiv } from "../styles/styled_components"
+import { StyledBtnsDiv, StyledButton } from "../styles/styled_components"
 import { StyledPauseIcon, StyledPlayArrowIcon, StyledRestartAltIcon } from "../Icons/icons"
 
 const Buttons = () => {
     return (
         <StyledBtnsDiv>
             <Tooltip title="Start">
-                <StartButton><StyledPlayArrowIcon/></StartButton>
+                <StyledButton><StyledPlayArrowIcon/></StyledButton>
             </Tooltip>
             <Tooltip title="Pause">
-                <PauseButton><StyledPauseIcon /></PauseButton>    
+                <StyledButton><StyledPauseIcon /></StyledButton>    
             </Tooltip>
             <Tooltip title="Reset">
-                <ResetButton><StyledRestartAltIcon /></ResetButton>
+                <StyledButton><StyledRestartAltIcon /></StyledButton>
             </Tooltip>
         </StyledBtnsDiv>
     )
