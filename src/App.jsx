@@ -4,7 +4,9 @@ import Buttons from './components/buttons'
 import Footer from './components/footer'
 import TimerComponent from './components/timer'
 import GlobalStyle from './styles/GlobalStyle'
-import { MainDiv, StyledCountSpan, TomatoContainer } from './styles/styled_components'
+import { MainDiv, StyledCountSpan, StyledH2Mode, TomatoContainer } from './styles/styled_components'
+import { ThemeProvider } from 'styled-components'
+import { focusTheme, longBreakTheme, shortBreakTheme } from './themes'
 
 function App() {
   const FOCUS_TIME = 0.5 * 60;      // 25 minutos
@@ -15,6 +17,7 @@ function App() {
   const [mode, setMode] = useState("focus"); // focus | shortBreak | longBreak
   const [cycleCount, setCycleCount] = useState(0);
   const timerRef = useRef(null);
+
 
   const formatTime = (seconds) => {
     const min = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -68,10 +71,22 @@ function App() {
     }
   };
 
+   const getTheme = () => {
+    switch (mode) {
+      case "shortBreak":
+        return shortBreakTheme;
+      case "longBreak":
+        return longBreakTheme;
+      default:
+        return focusTheme;
+    }
+  };
+
   return (
+    <ThemeProvider theme={getTheme}>
       <MainDiv>
         <GlobalStyle />
-        <h2 style={{marginTop: "2rem", marginBottom: "7rem"}}>{mode === "focus" ? "🔴 Focus" : mode === "shortBreak" ? "🟢 Short Break" : "🔵 Long Break"}</h2>
+        <StyledH2Mode style={{marginTop: "2rem", marginBottom: "4rem"}}>{mode === "focus" ? "🔴 FOCUS" : mode === "shortBreak" ? "🟢 SHORT BREAK" : "🔵 LONG BREAK"}</StyledH2Mode>
         <TomatoContainer>
           <TimerComponent timer={formatTime(timeLeft)}/>
           <Buttons isRunning={isRunning} handleStartPause={handleStartPause} handleReset={handleReset} />
@@ -79,6 +94,7 @@ function App() {
         <StyledCountSpan>Ciclos completos: {cycleCount}</StyledCountSpan>
         <Footer />
       </MainDiv>
+    </ThemeProvider>
   )
 }
 

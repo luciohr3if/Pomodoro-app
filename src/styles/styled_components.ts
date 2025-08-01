@@ -43,6 +43,12 @@ export const Leaf = styled.div<LeafProps>`
     }
 `
 
+export const StyledH2Mode = styled.h2`
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+`
+
 export const TomatoDiv = styled.div`
     display: flex;
     align-items: center;
@@ -65,13 +71,17 @@ export const TomatoContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 600px) {
+        margin-top: auto;
+    }
 `;
 
 export const StyledCountSpan = styled.span`
     display: block;
     text-align: center;
     margin-top: 4rem; 
-    font-size: 1rem;
+    font-size: 1.8rem;
     color: white;
 `
 
@@ -101,15 +111,21 @@ export const StyledBtnsDiv = styled.div`
 `
 
 export const StyledButton = styled.button`
+    display: flex;
     color: #ffffff;
     border-radius: 0.6rem;
-    padding: 0.6em 1.2em;
     border: none;
-    font-size: 2em;
     outline: none;
-    font-weight: 500;
+    font-weight: bold;
+    margin: 0;
+    padding: 20px 30px;
     cursor: pointer;
-    background-color: #33415C;
+    background-color: #24344eff;
+    align-items: center;
+
+    &:hover {
+        background-color: #1f2c42ff;
+    }
 
     @media (max-width: 600px) {
         font-size: 1.25rem;

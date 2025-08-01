@@ -9,11 +9,15 @@ const Buttons = (
     ) => {
     return (
         <StyledBtnsDiv>
-            <Tooltip title={isRunning ? "Pause" : "Start"}>
-                <StyledButton onClick={() => handleStartPause()}>{isRunning ? (<StyledPauseIcon/>) : (<StyledPlayArrowIcon/>)}</StyledButton>    
+            <Tooltip title={isRunning ? "Pause" : "Start"} placement="top">
+                <StyledButton onClick={() => handleStartPause()}>
+                    {isRunning ? (<StyledPauseIcon/>) : (<StyledPlayArrowIcon/>)}
+                </StyledButton>    
             </Tooltip>
-            <Tooltip title="Reset">
-                <StyledButton onClick={() => handleReset()}><StyledRestartAltIcon /></StyledButton>
+            <Tooltip title="Reset" placement="top">
+                <StyledButton onClick={() => handleReset()}>
+                    <StyledRestartAltIcon />
+                </StyledButton>
             </Tooltip>
         </StyledBtnsDiv>
     )
