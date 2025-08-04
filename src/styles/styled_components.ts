@@ -44,7 +44,7 @@ export const Leaf = styled.div<LeafProps>`
 `
 
 export const StyledH2Mode = styled.h2`
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 4rem;
 `
@@ -56,9 +56,9 @@ export const TomatoDiv = styled.div`
     border-radius: 50%;
     width: 30rem;
     height: 25rem;
-    border: 0.6rem solid #ba2720ff;
+    border: 0.6rem solid ${({theme}) => theme.tomatoBorder};
     border-bottom: none;
-    background-color: rgba(223, 76, 76, 0.1);
+    background-color: rgba(186, 39, 32, 0.25);
 
     @media (max-width: 600px) {
         width: 17.5rem;
@@ -105,7 +105,7 @@ export const StyledBtnsDiv = styled.div`
     height: auto;
     padding: 0;
     margin: 0;
-    gap: 0.6rem;
+    gap: 1rem;
     position: absolute;
     bottom: -2rem;
 `
@@ -120,11 +120,11 @@ export const StyledButton = styled.button`
     margin: 0;
     padding: 20px 30px;
     cursor: pointer;
-    background-color: #24344eff;
+    background-color: ${({theme}) => theme.button};
     align-items: center;
 
     &:hover {
-        background-color: #1f2c42ff;
+        background-color: ${({theme}) => theme.buttonHover};
     }
 
     @media (max-width: 600px) {
@@ -154,4 +154,5 @@ export const StyledSpan = styled.span`
     align-items: center;
     gap: 0.469rem;
     color: #ffffff;
+    font-weight: bold;
 `;

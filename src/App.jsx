@@ -9,11 +9,12 @@ import { ThemeProvider } from 'styled-components'
 import { focusTheme, longBreakTheme, shortBreakTheme } from './themes'
 
 function App() {
-  const FOCUS_TIME = 0.5 * 60;      // 25 minutos
-  const SHORT_BREAK = 5 * 60;      // 5 minutos
-  const LONG_BREAK = 15 * 60;      // 15 minutos
+  const FOCUS_TIME = 0.05 * 60;      // 25 minutos
+  const SHORT_BREAK = 0.05 * 60;      // 5 minutos
+  const LONG_BREAK = 0.05 * 60;      // 15 minutos
   const [timeLeft, setTimeLeft] = useState(FOCUS_TIME);
   const [isRunning, setIsRunning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [mode, setMode] = useState("focus"); // focus | shortBreak | longBreak
   const [cycleCount, setCycleCount] = useState(0);
   const timerRef = useRef(null);
@@ -42,6 +43,12 @@ function App() {
   }, [isRunning, timeLeft]);
 
   const handleStartPause = () => {
+    if (isRunning) {
+      setIsPaused(true)
+    } else {
+      setIsPaused(false)
+    }
+
     setIsRunning((prev) => !prev);
   };
 
@@ -72,6 +79,10 @@ function App() {
   };
 
    const getTheme = () => {
+    if (isPaused) {
+      return pauseTheme;
+    }
+
     switch (mode) {
       case "shortBreak":
         return shortBreakTheme;
@@ -82,16 +93,29 @@ function App() {
     }
   };
 
+  const getModeLabel = () => {
+  if (isPaused) return "PAUSED";
+
+  switch (mode) {
+    case "shortBreak":
+      return "SHORT BREAK";
+    case "longBreak":
+      return "LONG BREAK";
+    default:
+      return "FOCUS";
+  }
+};
+
   return (
     <ThemeProvider theme={getTheme}>
       <MainDiv>
         <GlobalStyle />
-        <StyledH2Mode style={{marginTop: "2rem", marginBottom: "4rem"}}>{mode === "focus" ? "🔴 FOCUS" : mode === "shortBreak" ? "🟢 SHORT BREAK" : "🔵 LONG BREAK"}</StyledH2Mode>
+        <StyledH2Mode>{getModeLabel()}</StyledH2Mode>
         <TomatoContainer>
           <TimerComponent timer={formatTime(timeLeft)}/>
           <Buttons isRunning={isRunning} handleStartPause={handleStartPause} handleReset={handleReset} />
         </TomatoContainer>
-        <StyledCountSpan>Ciclos completos: {cycleCount}</StyledCountSpan>
+        <StyledCountSpan>Complete cycles: {cycleCount}</StyledCountSpan>
         <Footer />
       </MainDiv>
     </ThemeProvider>

@@ -1,35 +1,23 @@
 export const focusTheme = {
   mode: "focus",
-  background: "#212529",
-  text: "#ffffff",
+  background: "#F3722C",
   tomatoBorder: "#ba2720",
-  button: "#ff6b6b",
-  footerBackground: "#343A40",
+  button: "#FF5400",
+  buttonHover: "#FF4800",
 };
 
 export const shortBreakTheme = {
   mode: "shortBreak",
-  background: "#1d3557",
-  text: "#ffffff",
+  background: "#023E8A",
   tomatoBorder: "#2a9d8f",
   button: "#48cae4",
-  footerBackground: "#264653",
+  buttonHover: "#FF4800",
 };
 
 export const longBreakTheme = {
   mode: "longBreak",
-  background: "#023e8a",
-  text: "#ffffff",
+  background: "#457b9d ",
   tomatoBorder: "#90e0ef",
   button: "#00b4d8",
-  footerBackground: "#03045e",
-};
-
-export const pauseTheme = {
-  mode: "pause",
-  background: "#023e8a",
-  text: "#ffffff",
-  tomatoBorder: "#90e0ef",
-  button: "#00b4d8",
-  footerBackground: "#03045e",
+  buttonHover: "#FF4800",
 };
