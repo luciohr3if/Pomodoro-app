@@ -9,9 +9,9 @@ import { ThemeProvider } from 'styled-components'
 import { focusTheme, longBreakTheme, shortBreakTheme } from './themes'
 
 function App() {
-  const FOCUS_TIME = 0.05 * 60;      
-  const SHORT_BREAK = 0.05 * 60;     
-  const LONG_BREAK = 0.05 * 60;   
+  const FOCUS_TIME = 25 * 60;      
+  const SHORT_BREAK = 5 * 60;     
+  const LONG_BREAK = 15 * 60;   
   const [timeLeft, setTimeLeft] = useState(FOCUS_TIME);
   const [isRunning, setIsRunning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);

@@ -11,6 +11,39 @@ export const MainDiv = styled.div`
   gap: 0.6rem;
 `;
 
+export const StyledH2Mode = styled.h2`
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 600px) {
+        margin-bottom: 0;
+    }
+`
+
+export const TomatoContainer = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 600px) {
+        margin-top: auto;
+        margin-bottom: 3rem;
+    }
+`;
+
+export const StyledTimerDiv = styled.div`
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    position: relative;
+`
+
 export const StyledLeafsDiv = styled.div`
     position: absolute; 
     top: 0;
@@ -43,17 +76,6 @@ export const Leaf = styled.div<LeafProps>`
     }
 `
 
-export const StyledH2Mode = styled.h2`
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-
-    @media (max-width: 600px) {
-        margin-bottom: 0;
-    }
-`
-
 export const TomatoDiv = styled.div`
     display: flex;
     align-items: center;
@@ -69,41 +91,15 @@ export const TomatoDiv = styled.div`
         width: 17.5rem;
         height: 15rem;
     }
-
-    h1 {
-        font-size: 62px;
-        color: #ffffff;
-    }
 `
 
-export const TomatoContainer = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const StyledH1Timer = styled.h1`
+    font-size: 4.875rem;
+    color: #ffffff;
 
     @media (max-width: 600px) {
-        margin-top: auto;
-        margin-bottom: 3rem;
+        font-size: 3.625rem;
     }
-`;
-
-export const StyledCountSpan = styled.span`
-    display: block;
-    text-align: center;
-    margin-top: 4rem; 
-    font-size: 1.8rem;
-    color: white;
-`
-
-export const StyledTimerDiv = styled.div`
-    display: flex;
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    position: relative;
 `
 
 export const StyledBtnsDiv = styled.div`
@@ -144,6 +140,13 @@ export const StyledButton = styled.button`
     }
 `
 
+export const StyledCountSpan = styled.span`
+    display: block;
+    text-align: center;
+    margin-top: 4rem; 
+    font-size: 1.8rem;
+    color: white;
+`
 
 export const StyledFooter = styled.div`
     display: flex;

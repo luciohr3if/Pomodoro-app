@@ -1,4 +1,4 @@
-import { Leaf, StyledLeafsDiv, StyledTimerDiv, TomatoDiv } from "../styles/styled_components"
+import { Leaf, StyledH1Timer, StyledLeafsDiv, StyledTimerDiv, TomatoDiv } from "../styles/styled_components"
 
 const TimerComponent = ({timer}) => {
     return (
@@ -11,7 +11,7 @@ const TimerComponent = ({timer}) => {
                 <Leaf $rotation={-20} $left="47%" $top="-5%" />
             </StyledLeafsDiv>
             <TomatoDiv>
-                <h1>{timer}</h1>
+                <StyledH1Timer>{timer}</StyledH1Timer>
             </TomatoDiv>
         </StyledTimerDiv>
     )
