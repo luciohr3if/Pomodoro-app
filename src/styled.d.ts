@@ -8,5 +8,6 @@ declare module "styled-components" {
     buttonHover: string;
     buttonText: string;
     tomatoBorder: string;
+    foreground: string;
   }
 }

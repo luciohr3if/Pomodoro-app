@@ -79,10 +79,6 @@ function App() {
   };
 
    const getTheme = () => {
-    if (isPaused) {
-      return pauseTheme;
-    }
-
     switch (mode) {
       case "shortBreak":
         return shortBreakTheme;

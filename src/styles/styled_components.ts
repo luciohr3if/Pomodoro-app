@@ -47,6 +47,10 @@ export const StyledH2Mode = styled.h2`
     font-size: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 4rem;
+
+    @media (max-width: 600px) {
+        margin-bottom: 0;
+    }
 `
 
 export const TomatoDiv = styled.div`
@@ -56,7 +60,7 @@ export const TomatoDiv = styled.div`
     border-radius: 50%;
     width: 30rem;
     height: 25rem;
-    border: 0.6rem solid ${({theme}) => theme.tomatoBorder};
+    border: 0.6rem solid #ba2720;
     border-bottom: none;
     background-color: rgba(186, 39, 32, 0.25);
 
