@@ -21,24 +21,24 @@ export const StyledLeafsDiv = styled.div`
 `
 
 interface LeafProps {
-    small: string;
-    top: string;
-    left: string;
-    rotation: string;
+    $small: string;
+    $top: string;
+    $left: string;
+    $rotation: string;
 }
 
 export const Leaf = styled.div<LeafProps>`
-    width: ${({ small }) => (small ? '5rem' : '7.5rem')};
+    width: ${({ $small }) => ($small ? '5rem' : '7.5rem')};
     height: 2.5rem;
     background-color: green;
     position: absolute;
-    top: ${({ top }) => top || '0'};
-    left: ${({ left }) => left || '0'};
+    top: ${({ $top }) => $top || '0'};
+    left: ${({ $left }) => $left || '0'};
     border-radius: 50%;
-    transform: rotate(${({ rotation }) => rotation || 0}deg);
+    transform: rotate(${({ $rotation }) => $rotation || 0}deg);
 
      @media (max-width: 600px) {
-        width: ${({ small }) => (small ? '3.25rem' : '5rem')};
+        width: ${({ $small }) => ($small ? '3.25rem' : '5rem')};
         height: 1.5rem;
     }
 `
