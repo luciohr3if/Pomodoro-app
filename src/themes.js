@@ -2,7 +2,7 @@ export const focusTheme = {
   mode: "focus",
   background: "#F3722C",
   foreground: "%235f0000",
-  button: "#FF8500",
+  button: "#FF851B",
   buttonHover: "#FF7900",
 };
 
